@@ -1,0 +1,271 @@
+:root {
+    --primario: #9c27B0;
+    --primarioOsculro: #89119d;
+    --secundario: #ffce00;
+    --secundarioOscuro: rgb(233, 287, 2);
+    --blanco: #fff;
+    --negro: #000;
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /* es lo mismo que decir 1 rem o 10px - lo debemos declarar aqui asi lo generalizamos
+	para todo el archivo y podemos usar los rem*/
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+
+/* globales */
+
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+
+/* header */
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+
+/* footer */
+
+.footer {
+    background-color: var(--primarioOsculro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__text {
+    font-family: var(--fuentePrincipal);
+    text-align: center;
+    font-size: 2.2rem;
+}
+
+
+/* navegacion */
+
+.nav {
+    background-color: var(--primarioOsculro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav__link {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+}
+
+.nav__link:hover,
+.nav__link--activo {
+    color: var(--secundario);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width:768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.product {
+    background-color: var(--primarioOsculro);
+    padding: 1rem;
+}
+
+.product__name {
+    font-size: 4rem;
+}
+
+.product__price {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.product__name,
+.product__price {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+
+/* gráficos */
+
+.grafic {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafic--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafic--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8 / 9;
+}
+
+@media (min-width:768px) {
+    .grafic--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+
+/* nosotros */
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width:768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .nosotros__img {
+        grid-column: 2 / 3;
+    }
+}
+
+.nosotros__img {
+    grid-row: 1 / 2;
+}
+
+
+/* bloques */
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width:768px) {
+    .blocks {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.block {
+    text-align: center;
+}
+
+.block__title {
+    margin: 0;
+}
+
+
+/* producto */
+
+@media (min-width:768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .product__form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form__select {}
+}
+
+.product_form {
+    display: grid;
+    grid-template-columns: repeat(2, 1 fr);
+    gap: 2rem
+}
+
+.form__select {
+    border: 1rem solid var(--primarioOsculro);
+    background-color: var(--primario);
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.form__buttom {
+    grid-column: 1 / 3;
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .3s ease;
+}
+
+.form__buttom:hover {
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
